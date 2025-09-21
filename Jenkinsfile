@@ -1,16 +1,17 @@
 pipeline {
     agent {label 'dev'}
-    tools {maven 'maven'}
+    tools {tool 'maven'}
     stages {
-        stage('Git') {
+        stage('git') {
             steps {
-                git 'https://github.com/vamsibyramala/dicet_tv.git'
+                git 'https://github.com/Nithinshetty41/dicet_tv.git'
             }
         }
         stage('build') {
             steps {
-                sh 'mvn clean package'
+            sh 'mvn clean package'
             }
         }
     }
 }
+
